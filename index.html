@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refuge for Churches — The 24/7 Christian Guidance App Built by a Licensed Counselor</title>
+  <meta name="description" content="Give your congregation a theologically sound, clinically grounded place to process pain — before they ever need your office. Built by Dr. Jon Thompson, LPC-S.">
+  <meta property="og:title" content="Refuge for Churches — A Tool for the Shepherd">
+  <meta property="og:description" content="The 24/7 Christian guidance app that takes 5-10 hours of pastoral counseling off your plate every week.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://churches.refugeapp.ai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0e1219;
+      --navy-light: #131927;
+      --gold: #C8A45E;
+      --gold-dim: #8a7443;
+      --gold-glow: rgba(200, 164, 94, 0.08);
+      --cream: #e8dcc8;
+      --cream-dim: #a89b88;
+      --text: #ddd6c8;
+      --text-dim: #7a7268;
+      --bg-card: rgba(200, 164, 94, 0.06);
+      --bg-card-border: rgba(200, 164, 94, 0.16);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Source Sans 3', -apple-system, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 19px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========= UTILITY ========= */
+    .container { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+    .container-wide { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+    .gold { color: var(--gold); }
+    .cream { color: var(--cream); }
+    .text-center { text-align: center; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ========= HEADER / NAV ========= */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(14, 18, 25, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(200, 164, 94, 0.08);
+      padding: 16px 0;
+    }
+    .site-header .container-wide {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-text {
+      font-family: var(--serif); font-size: 26px; font-weight: 600;
+      color: var(--cream); text-decoration: none; letter-spacing: 1px;
+    }
+    .logo-text span { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--sans); font-size: 14px; font-weight: 500;
+      color: var(--navy); background: var(--gold);
+      padding: 10px 24px; border-radius: 6px; text-decoration: none;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover { background: var(--cream); }
+
+    /* ========= HERO ========= */
+    .hero {
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(200, 164, 94, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans); font-size: 13px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--gold); margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(38px, 5.5vw, 64px);
+      font-weight: 400; font-style: italic;
+      color: var(--cream); line-height: 1.15;
+      margin-bottom: 32px; max-width: 700px;
+    }
+    .hero-sub {
+      font-size: 22px; font-weight: 300;
+      color: var(--text); line-height: 1.6;
+      max-width: 620px; margin-bottom: 48px;
+    }
+    .hero-sub strong { color: var(--cream); font-weight: 500; }
+    .hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-block; font-family: var(--sans); font-size: 15px;
+      font-weight: 500; color: var(--navy); background: var(--gold);
+      padding: 16px 36px; border-radius: 6px; text-decoration: none;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      transition: all 0.3s ease; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--cream); }
+    .btn-secondary {
+      display: inline-block; font-family: var(--sans); font-size: 15px;
+      font-weight: 400; color: var(--gold); background: transparent;
+      padding: 16px 36px; border-radius: 6px; text-decoration: none;
+      border: 1px solid rgba(200, 164, 94, 0.3);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: var(--gold-glow); }
+    .hero-credential {
+      margin-top: 40px; padding-top: 32px;
+      border-top: 1px solid rgba(200, 164, 94, 0.1);
+      font-size: 14px; color: var(--text-dim); line-height: 1.6;
+    }
+    .hero-credential strong { color: var(--cream-dim); font-weight: 500; }
+
+    /* ========= SECTION SHARED ========= */
+    section { padding: 100px 0; }
+    .section-divider {
+      width: 60px; height: 1px; background: var(--gold);
+      margin: 0 auto 48px;
+    }
+    .section-label {
+      font-family: var(--sans); font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--gold-dim); margin-bottom: 20px;
+    }
+    .section-heading {
+      font-family: var(--serif); font-size: clamp(28px, 4vw, 42px);
+      font-weight: 400; color: var(--cream); line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    .section-body { font-size: 19px; color: var(--text); max-width: 660px; }
+
+    /* ========= STAT BAR ========= */
+    .stat-bar {
+      background: rgba(200, 164, 94, 0.07);
+      border-top: 1px solid rgba(200, 164, 94, 0.18);
+      border-bottom: 1px solid rgba(200, 164, 94, 0.18);
+      padding: 56px 0;
+    }
+    .stat-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px; text-align: center;
+    }
+    .stat-number {
+      font-family: var(--serif); font-size: 48px; font-weight: 600;
+      color: var(--gold); line-height: 1;
+    }
+    .stat-label {
+      font-size: 16px; color: var(--cream-dim); margin-top: 8px;
+      line-height: 1.4;
+    }
+    .stat-source {
+      text-align: center; margin-top: 24px;
+      font-size: 12px; color: var(--text-dim);
+    }
+
+    /* ========= TIME CHARTS ========= */
+    .time-charts { padding: 80px 0 60px; background: #131927; }
+    .charts-heading {
+      text-align: center; margin-bottom: 12px;
+    }
+    .charts-subhead {
+      text-align: center; font-size: 16px; color: var(--text-dim);
+      margin-bottom: 56px;
+    }
+    .charts-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start; max-width: 780px; margin: 0 auto;
+    }
+    .chart-wrap { text-align: center; }
+    .chart-label {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+    .chart-label.avg { color: var(--cream-dim); }
+    .chart-label.eff { color: var(--gold); }
+    .chart-svg { width: 200px; height: 200px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+    .chart-svg path { stroke: #131927; stroke-width: 2; }
+    .chart-legend { margin-top: 28px; text-align: left; display: inline-block; }
+    .legend-item {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 17px; color: var(--text); margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .legend-dot {
+      width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+    }
+    .charts-source {
+      text-align: center; font-size: 14px; color: var(--text-dim);
+      margin-top: 40px;
+    }
+    .charts-takeaway {
+      text-align: center; max-width: 580px; margin: 32px auto 0;
+      font-size: 22px; color: var(--cream-dim); line-height: 1.6;
+      font-style: italic; font-family: var(--serif);
+    }
+    @media (max-width: 768px) {
+      .charts-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ========= THE PROBLEM ========= */
+    .problem { padding: 100px 0; }
+    .problem-quote {
+      font-family: var(--serif); font-size: clamp(22px, 3vw, 30px);
+      font-style: italic; color: var(--cream);
+      line-height: 1.5; max-width: 700px;
+      margin: 0 auto 20px; text-align: center;
+    }
+    .problem-attrib {
+      text-align: center; font-size: 14px; color: var(--gold-dim);
+    }
+
+    /* ========= WHAT REFUGE IS / IS NOT ========= */
+    .clarity { padding: 100px 0; background: #131927; }
+    .clarity-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 48px;
+    }
+    .clarity-card {
+      padding: 40px;
+      border: 1px solid var(--bg-card-border);
+      border-radius: 12px;
+      background: var(--bg-card);
+    }
+    .clarity-card h3 {
+      font-family: var(--serif); font-size: 24px; font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .clarity-card.is h3 { color: var(--gold); }
+    .clarity-card.is-not h3 { color: var(--cream-dim); }
+    .clarity-card ul { list-style: none; }
+    .clarity-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(200, 164, 94, 0.06);
+      font-size: 17px; line-height: 1.5;
+    }
+    .clarity-card li:last-child { border-bottom: none; }
+    .clarity-card li::before { margin-right: 10px; }
+    .clarity-card.is li::before { content: '✓'; color: var(--gold); font-weight: 600; }
+    .clarity-card.is-not li::before { content: '✗'; color: #6b5a4a; font-weight: 600; }
+
+    /* ========= DEMO / SCREENSHOT ========= */
+    .demo { padding: 100px 0; background: #161d2b; }
+    .demo-window {
+      max-width: 420px; margin: 48px auto 0;
+      background: #1a1f2b;
+      border-radius: 24px;
+      border: 1px solid rgba(200, 164, 94, 0.1);
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    }
+    .demo-status-bar {
+      display: flex; align-items: center; justify-content: center;
+      padding: 14px 20px; font-size: 15px; font-weight: 500;
+      color: var(--cream); font-family: var(--serif);
+      letter-spacing: 1px;
+      border-bottom: 1px solid rgba(200, 164, 94, 0.08);
+    }
+    .demo-chat { padding: 24px 18px; }
+    .demo-msg {
+      margin-bottom: 18px; padding: 14px 18px;
+      border-radius: 16px; font-size: 16px;
+      line-height: 1.6; max-width: 88%;
+    }
+    .demo-msg.user {
+      background: rgba(200, 164, 94, 0.12);
+      color: var(--cream); margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+    .demo-msg.refuge {
+      background: rgba(255,255,255,0.04);
+      color: var(--text); border-bottom-left-radius: 4px;
+    }
+    .demo-msg .r-icon {
+      display: inline-block; font-family: var(--serif);
+      font-size: 18px; color: var(--gold); font-weight: 700;
+      margin-right: 6px;
+    }
+    .demo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin: 48px auto 0;
+      max-width: 900px;
+    }
+    .demo-pair .demo-window {
+      max-width: 100%;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .demo-pair {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+      }
+    }
+    .demo-note {
+      text-align: center; font-size: 13px; color: var(--text-dim);
+      margin-top: 20px; font-style: italic;
+    }
+
+    /* ========= THEOLOGICAL TRUST ========= */
+    .trust { padding: 100px 0; background: rgba(200, 164, 94, 0.05); }
+    .trust-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; margin-top: 48px;
+    }
+    .trust-item {
+      padding: 32px;
+      border-left: 2px solid var(--gold-dim);
+    }
+    .trust-item h4 {
+      font-family: var(--serif); font-size: 20px;
+      color: var(--cream); margin-bottom: 12px; font-weight: 500;
+    }
+    .trust-item p {
+      font-size: 17px; color: var(--text); line-height: 1.6;
+    }
+
+    /* ========= TESTIMONIALS ========= */
+    .testimonials { padding: 100px 0; background: #131927; }
+    .testimonial-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 36px; margin-top: 48px;
+    }
+    .testimonial-card {
+      padding: 36px; border-radius: 12px;
+      border: 1px solid var(--bg-card-border);
+      background: var(--bg-card);
+    }
+    .testimonial-card blockquote {
+      font-family: var(--serif); font-size: 20px;
+      font-style: italic; color: var(--cream);
+      line-height: 1.6; margin-bottom: 20px;
+    }
+    .testimonial-card cite {
+      font-style: normal; font-size: 13px;
+      color: var(--gold-dim); display: block;
+    }
+
+    /* ========= PRICING ========= */
+    .pricing { padding: 100px 0; background: rgba(200, 164, 94, 0.05); }
+    .pricing-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; margin-top: 48px; max-width: 780px; margin-left: auto; margin-right: auto;
+    }
+    .price-card {
+      padding: 40px 36px; border-radius: 16px;
+      border: 1px solid var(--bg-card-border);
+      background: var(--bg-card);
+      display: flex; flex-direction: column;
+    }
+    .price-card.price-green {
+      border-color: rgba(91, 140, 106, 0.5);
+      background: rgba(91, 140, 106, 0.07);
+    }
+    .price-for {
+      font-family: var(--sans); font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2.5px;
+      margin-bottom: 12px;
+    }
+    .price-for.gold { color: var(--gold-dim); }
+    .price-for.green { color: #6aab7e; }
+    .price-name {
+      font-family: var(--serif); font-size: 34px; font-weight: 600;
+      color: var(--cream); line-height: 1.1; margin-bottom: 16px;
+    }
+    .price-amount-row {
+      display: flex; align-items: baseline; gap: 10px;
+      margin-bottom: 4px;
+    }
+    .price-amount {
+      font-family: var(--serif); font-size: 28px; font-weight: 600;
+      color: var(--cream); line-height: 1;
+    }
+    .price-was {
+      font-size: 14px; color: var(--text-dim);
+      text-decoration: line-through;
+    }
+    .price-save {
+      font-size: 13px; font-weight: 600;
+    }
+    .price-save.gold { color: var(--gold); }
+    .price-save.green { color: #6aab7e; }
+    .price-desc {
+      font-size: 16px; color: var(--text);
+      margin: 20px 0 24px; line-height: 1.65;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(200, 164, 94, 0.1);
+    }
+    .price-card.price-green .price-desc {
+      border-bottom-color: rgba(91, 140, 106, 0.2);
+    }
+    .price-features {
+      list-style: none; margin: 0 0 32px; flex-grow: 1;
+    }
+    .price-features li {
+      font-size: 15px; color: var(--text);
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(200, 164, 94, 0.07);
+      display: flex; align-items: center; gap: 12px;
+      line-height: 1.4;
+    }
+    .price-card.price-green .price-features li {
+      border-bottom-color: rgba(91, 140, 106, 0.12);
+    }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features li::before {
+      content: '—';
+      color: var(--gold-dim);
+      flex-shrink: 0;
+      font-size: 13px;
+    }
+    .price-card.price-green .price-features li::before {
+      color: #6aab7e;
+    }
+    .btn-green {
+      display: inline-block;
+      background: #4a8c5c;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 6px;
+      font-family: var(--sans);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s ease;
+    }
+    .btn-green:hover { background: #3d7a4e; }
+    .price-card .btn-primary,
+    .price-card .btn-secondary,
+    .price-card .btn-green {
+      width: 100%;
+    }
+    .price-note {
+      font-size: 12px; color: var(--text-dim);
+      margin-top: 10px; text-align: center;
+    }
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+
+    /* ========= FAQ ========= */
+    .faq { padding: 100px 0; }
+    .faq-list { max-width: 720px; margin: 48px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid rgba(200, 164, 94, 0.1);
+      padding: 28px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(200, 164, 94, 0.1); }
+    .faq-q {
+      font-family: var(--serif); font-size: 22px;
+      color: var(--cream); margin-bottom: 12px; font-weight: 500;
+      cursor: pointer;
+    }
+    .faq-a { font-size: 17px; color: var(--text); line-height: 1.7; }
+
+    /* ========= FOUNDER Q&A ========= */
+    .founder-qa {
+      padding: 100px 0;
+      background: #131927;
+    }
+    .qa-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; margin-top: 48px; max-width: 780px; margin-left: auto; margin-right: auto;
+    }
+    .qa-item {
+      padding: 32px 36px;
+      border-radius: 12px;
+      background: rgba(200, 164, 94, 0.04);
+      border: 1px solid rgba(200, 164, 94, 0.12);
+    }
+    .qa-q {
+      font-family: var(--serif); font-size: 22px;
+      color: var(--gold); font-weight: 500;
+      margin-bottom: 14px; line-height: 1.3;
+    }
+    .qa-a {
+      font-size: 18px; color: var(--text); line-height: 1.7;
+    }
+    @media (max-width: 768px) {
+      .qa-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ========= FOUNDER ========= */
+    .founder {
+      padding: 100px 0;
+      background: #e8dcc8;
+    }
+    .founder-content {
+      max-width: 660px; margin: 0 auto;
+    }
+    .founder-content p {
+      font-size: 19px; color: #2a2318; line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .founder-sig {
+      margin-top: 40px; padding-top: 32px;
+      border-top: 1px solid rgba(14, 18, 25, 0.15);
+    }
+    .founder-name {
+      font-family: var(--serif); font-size: 22px;
+      color: #1a1208; font-weight: 500;
+    }
+    .founder-title {
+      font-size: 14px; color: #6b5f4e;
+      margin-top: 4px; line-height: 1.5;
+    }
+    .founder .section-label { color: #8a7443; }
+    .founder .section-heading { color: #1a1208; }
+
+    /* ========= FINAL CTA ========= */
+    .final-cta {
+      padding: 120px 0; text-align: center;
+    }
+    .final-cta h2 {
+      font-family: var(--serif); font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 400; color: var(--cream);
+      line-height: 1.25; margin-bottom: 20px;
+    }
+    .final-cta p {
+      font-size: 20px; color: var(--text); margin-bottom: 40px;
+    }
+
+    /* ========= FOOTER ========= */
+    .site-footer {
+      padding: 48px 0;
+      border-top: 1px solid rgba(200, 164, 94, 0.08);
+      text-align: center; font-size: 13px; color: var(--text-dim);
+    }
+    .site-footer .verse {
+      font-family: var(--serif); font-style: italic;
+      font-size: 15px; color: var(--cream-dim);
+      margin-bottom: 16px;
+    }
+    .site-footer .disclaimer {
+      max-width: 600px; margin: 12px auto 0;
+      line-height: 1.5;
+    }
+
+    /* ========= RESPONSIVE ========= */
+    @media (max-width: 768px) {
+      .stat-grid { grid-template-columns: 1fr; gap: 32px; }
+      .clarity-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .hero { padding: 130px 0 80px; }
+      section { padding: 72px 0; }
+      .hero-cta-row { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { text-align: center; }
+      .use-cases [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+
+    /* ========= ANIMATIONS ========= */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container-wide">
+      <a href="https://www.refugeapp.ai" class="logo-text"><span>R</span>efuge</a>
+      <a href="https://app.refugeapp.ai" class="nav-cta">Try Refuge Free</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">For Pastors & Church Leaders</p>
+      <h1>"I didn't sign up for all&nbsp;this."</h1>
+      <p class="hero-sub">
+        Your people need someone at 2&nbsp;AM. On the drive home from the affair disclosure. In the bathroom at work after the panic attack. <strong>You were never meant to be the only option.</strong> Now you don't have to be.
+      </p>
+      <p class="hero-sub" style="margin-bottom: 40px;">
+        Refuge is a <strong>24/7 Christian guidance app</strong> that gives your people a trustworthy first step before they ever land in your office — built by a licensed counselor with 23&nbsp;years of clinical experience.
+      </p>
+      <div class="hero-cta-row">
+        <a href="https://app.refugeapp.ai" class="btn-primary">Try It Yourself — Free for 3 Days</a>
+        <a href="#how-churches-use" class="btn-secondary">See How Churches Use Refuge</a>
+      </div>
+      <div class="hero-credential">
+        Built by <strong>Dr. Jon Thompson, LPC-S</strong> · 23 years clinical practice · Doctorate, <strong>Midwestern Baptist Theological Seminary</strong> · Founder, Genesis Counseling & Peace Partnership · Lee's Summit, Missouri
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="container-wide">
+      <div class="stat-grid">
+        <div class="fade-in">
+          <div class="stat-number">16 hrs</div>
+          <div class="stat-label">spent on counseling per week<br>by the average pastor</div>
+        </div>
+        <div class="fade-in">
+          <div class="stat-number">63%</div>
+          <div class="stat-label">of pastors report significant<br>symptoms of burnout</div>
+        </div>
+        <div class="fade-in">
+          <div class="stat-number">1 in 5</div>
+          <div class="stat-label">pastors have considered<br>leaving ministry in the past year</div>
+        </div>
+      </div>
+      <p class="stat-source">Sources: Lifeway Research, Barna Group</p>
+    </div>
+  </div>
+
+  <!-- TIME CHARTS -->
+  <section class="time-charts">
+    <div class="container">
+      <div class="charts-heading">
+        <p class="section-label">The Data</p>
+        <h2 class="section-heading">How pastors actually spend their 55-hour weeks.</h2>
+      </div>
+      <p class="charts-subhead">The difference between effective pastors and burned-out pastors isn't talent. It's what's on their plate.</p>
+      <div class="charts-grid">
+
+        <!-- AVERAGE PASTOR -->
+        <div class="chart-wrap fade-in">
+          <div class="chart-label avg">The Average Pastor</div>
+          <svg class="chart-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,100 L100.00,12.00 A88,88 0 0,1 185.24,121.88 Z" fill="#8a7a54"/>
+            <path d="M100,100 L185.24,121.88 A88,88 0 0,1 105.53,187.83 Z" fill="#4a5a6a"/>
+            <path d="M100,100 L105.53,187.83 A88,88 0 0,1 22.89,142.39 Z" fill="#4a6050"/>
+            <path d="M100,100 L22.89,142.39 A88,88 0 0,1 22.89,57.61 Z" fill="#7a6040"/>
+            <path d="M100,100 L22.89,57.61 A88,88 0 0,1 100.00,12.00 Z" fill="#3a4a5a"/>
+            <circle cx="100" cy="100" r="44" fill="#131927"/>
+            <text x="100" y="96" text-anchor="middle" fill="#a89b88" font-size="11" font-family="Georgia,serif">16 hrs/wk</text>
+            <text x="100" y="111" text-anchor="middle" fill="#C8A45E" font-size="10" font-family="Georgia,serif">counseling</text>
+          </svg>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#7a6a4a"></div>Pastoral counseling — 29%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#4a5a6a"></div>Administration — 20%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#3a4a3a"></div>Preaching prep — 18%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#5a4a3a"></div>Meetings — 16%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#2a3a4a"></div>Other — 17%</div>
+          </div>
+        </div>
+
+        <!-- EFFECTIVE PASTOR -->
+        <div class="chart-wrap fade-in">
+          <div class="chart-label eff">The Effective Pastor</div>
+          <svg class="chart-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100,100 L100.00,12.00 A88,88 0 0,1 177.11,142.39 Z" fill="#C8A45E"/>
+            <path d="M100,100 L177.11,142.39 A88,88 0 0,1 57.61,177.11 Z" fill="#4a8c5c"/>
+            <path d="M100,100 L57.61,177.11 A88,88 0 0,1 16.31,72.81 Z" fill="#3a6a8a"/>
+            <path d="M100,100 L16.31,72.81 A88,88 0 0,1 57.61,22.89 Z" fill="#8a7a54"/>
+            <path d="M100,100 L57.61,22.89 A88,88 0 0,1 100.00,12.00 Z" fill="#4a5a6a"/>
+            <circle cx="100" cy="100" r="44" fill="#0e1219"/>
+            <text x="100" y="96" text-anchor="middle" fill="#a89b88" font-size="11" font-family="Georgia,serif">6 hrs/wk</text>
+            <text x="100" y="111" text-anchor="middle" fill="#C8A45E" font-size="10" font-family="Georgia,serif">counseling</text>
+          </svg>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#C8A45E"></div>Preaching prep — 33%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#4a8c5c"></div>Discipleship — 25%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#3a6a8a"></div>Prayer & study — 22%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#7a6a4a"></div>Pastoral counseling — 12%</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#4a5a6a"></div>Administration — 8%</div>
+          </div>
+        </div>
+
+      </div>
+      <p class="charts-takeaway">Refuge is the boundary. It takes the first call so you can make the most of your calling.</p>
+      <p class="charts-source">Source: Lifeway Research — "What Effective Pastors Do With Their Time"</p>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="problem">
+    <div class="container text-center">
+      <div class="section-divider"></div>
+      <p class="problem-quote">
+        "The difference between effective pastors and burned-out pastors isn't talent. It's what's on their plate. Pastoral burnout isn't a lack of faith — it's a lack of operational&nbsp;boundaries."
+      </p>
+      <p class="problem-attrib">— Dr. Jon Thompson</p>
+    </div>
+  </section>
+
+  <!-- WHAT REFUGE IS / IS NOT -->
+  <section class="clarity">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Clarity for Skeptics</p>
+        <h2 class="section-heading">Let's be direct about what this is.</h2>
+        <p class="section-body" style="margin: 0 auto 12px;">
+          You've seen AI tools that slap Bible verses on ChatGPT and call it ministry. This isn't that.
+        </p>
+      </div>
+      <div class="clarity-grid">
+        <div class="clarity-card is">
+          <h3>What Refuge Is</h3>
+          <ul>
+            <li>Private, guided conversations grounded in Scripture</li>
+            <li>Clinical-depth emotional processing — not surface-level devotionals</li>
+            <li>Honest self-examination with theological integrity</li>
+            <li>24/7 availability for the moments people can't wait until Sunday</li>
+            <li>A first step that makes your counseling conversations more productive</li>
+            <li>Built on historic, orthodox Christian theology</li>
+          </ul>
+        </div>
+        <div class="clarity-card is-not">
+          <h3>What Refuge Is Not</h3>
+          <ul>
+            <li>Not a replacement for pastors, discipleship, or biblical community</li>
+            <li>Not therapy — it doesn't diagnose or prescribe</li>
+            <li>Not progressive ideology dressed as counseling</li>
+            <li>Not open-ended AI spirituality or "choose your own truth"</li>
+            <li>Not a chatbot that agrees with everything you say</li>
+            <li>Not a data-harvesting platform — not even the founder can see conversations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO / WHAT IT LOOKS LIKE -->
+  <section class="demo">
+    <div class="container text-center">
+      <p class="section-label">See It In Action</p>
+      <h2 class="section-heading">What your people actually experience.</h2>
+      <p class="section-body" style="margin: 0 auto;">
+        This is an anonymized exchange from a real Refuge conversation. No scripts. No rehearsal. This is what happens when someone opens the app at midnight with something they can't say out loud.
+      </p>
+      <div class="demo-pair">
+        <div class="demo-window">
+          <div class="demo-status-bar">Refuge</div>
+          <div class="demo-chat">
+            <div class="demo-msg user">
+              I found messages on my husband's phone. I haven't confronted him. I don't know what to do. I can't tell anyone at church.
+            </div>
+            <div class="demo-msg refuge">
+              <span class="r-icon">R</span> That weight — carrying knowledge you didn't ask for while pretending everything is fine — is one of the most isolating experiences in a marriage. You're not overreacting. Discovery is a wound, not a suspicion to manage.<br><br>Before we talk about next steps, I want to understand something. When you say you can't tell anyone at church — is that because of how they'd see him, or how they'd see you?
+            </div>
+            <div class="demo-msg user">
+              Both. He's a deacon.
+            </div>
+            <div class="demo-msg refuge">
+              <span class="r-icon">R</span> That changes everything about the cost of honesty, doesn't it? The role protects him and traps you in the same silence.<br><br>There's a difference between keeping a confidence and being held hostage by one. What you're carrying right now is the second. And you don't have to figure out what to do with your marriage tonight. But you do need to stop carrying this alone — not because you're weak, but because isolation is where deception does its best work. In you and in him.
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-window">
+          <div class="demo-status-bar">Refuge</div>
+          <div class="demo-chat">
+            <div class="demo-msg user">
+              I don't think I'm depressed. I just feel gone.<br><br>I do everything I'm supposed to do. I lead the Bible study. I take care of the kids. I answer texts. I smile at church.<br><br>But I haven't felt close to God in a long time. And honestly? Sometimes I wonder if anyone would notice if I disappeared emotionally — as long as I kept functioning.
+            </div>
+            <div class="demo-msg refuge">
+              <span class="r-icon">R</span> You describe a particular kind of absence — not the dramatic collapse people notice, but the slow evacuation of presence while the machinery of life keeps running. That distinction matters. The body still moves through the required motions, yet something essential has withdrawn.<br><br>This experience sits inside a long biblical pattern. David repeatedly asked how long God would hide His face. Jesus quoted Psalm 22 from the cross — the cry of forsakenness — not because the Father had actually abandoned Him, but because the felt sense of presence had vanished. The wilderness in Deuteronomy 8 was not punishment for failure; it was the place where Israel discovered whether they would continue to orient toward God when every comforting sign had been removed.<br><br>The question your words raise is whether the version of you that still leads, smiles, and answers texts is the one God is actually after — or whether the one who feels gone is the one being addressed right now. Those two versions are not the same person.<br><br>What does the "gone" part notice when it is not performing the required tasks?
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="demo-note">Anonymized and used with permission. This is Refuge's actual voice — not a script.</p>
+    </div>
+  </section>
+
+  <!-- HOW CHURCHES USE REFUGE -->
+  <section class="use-cases" id="how-churches-use" style="padding: 100px 0; background: #131927;">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Practical Implementation</p>
+        <h2 class="section-heading">How churches are using Refuge.</h2>
+        <p class="section-body" style="margin: 0 auto;">
+          Pastors don't need another tool to manage. They need something they can hand to people and trust. Here's where Refuge fits into what you're already doing.
+        </p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px;">
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Counseling Intake</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">When someone calls the church office in crisis, point them to Refuge before their first appointment. They arrive having already named what they're carrying — and you skip the first two sessions of surface-level circling.</p>
+        </div>
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Between-Session Support</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">Your counseling meeting ends on Tuesday. The next one isn't until the following week. Refuge holds the conversation in the gap — so people don't spiral between appointments.</p>
+        </div>
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Marriage & Men's/Women's Ministry</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">Recommend Refuge as a companion resource for small groups, marriage intensives, or recovery programs. It goes deeper than a workbook and it's available when the group isn't meeting.</p>
+        </div>
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Staff Care</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">Your worship pastor, your youth director, your administrative staff — they carry weight they'll never bring to you. Give them a private place to process that doesn't require a meeting on your calendar.</p>
+        </div>
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Visitor Packets & New Member Care</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">Include Refuge in your welcome materials. First-time visitors carrying heavy questions aren't going to sign up for your small group first. They need a safe entry point — and Refuge is one.</p>
+        </div>
+        <div style="padding: 28px 32px; border-left: 2px solid var(--gold-dim);">
+          <h4 style="font-family: var(--serif); font-size: 20px; color: var(--cream); margin-bottom: 8px; font-weight: 500;">Late-Night & After-Hours Triage</h4>
+          <p style="font-size: 16px; color: var(--text); line-height: 1.6;">The text at 11 PM. The call on your day off. You can't always be available — but Refuge can. It holds people steady until you're able to engage, without defaulting to a crisis hotline or a Google search.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEOLOGICAL TRUST -->
+  <section class="trust">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Theological Foundation</p>
+        <h2 class="section-heading">Why you can trust this with your congregation.</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item fade-in">
+          <h4>Doctrinally Anchored</h4>
+          <p>Built on historic, orthodox Christian theology — not trending cultural positions. Refuge stands within the 2,000-year consensus of the church on Scripture, sin, identity, suffering, and redemption.</p>
+        </div>
+        <div class="trust-item fade-in">
+          <h4>Clinically Grounded</h4>
+          <p>Designed by Dr. Jon Thompson, LPC-S — 23 years of clinical counseling experience. Doctorate from Midwestern Baptist Theological Seminary. Undergraduate, Calvary University. Not a tech founder guessing at theology.</p>
+        </div>
+        <div class="trust-item fade-in">
+          <h4>Refuses to Sycophant</h4>
+          <p>Refuge doesn't just tell people what they want to hear. It holds the tension between compassion and truth — the same thing a good counselor does. It won't validate sin to avoid discomfort.</p>
+        </div>
+        <div class="trust-item fade-in">
+          <h4>Professional Safety Protocols</h4>
+          <p>Crisis detection triggers appropriate intervention. Refuge never attempts to handle what belongs in an emergency room or a licensed therapist's office. It knows its lane.</p>
+        </div>
+        <div class="trust-item fade-in">
+          <h4>Absolute Privacy</h4>
+          <p>Conversations are encrypted and private by design. When a user deletes a conversation or their account, the data is wiped from servers and backups. Gone. Period.</p>
+        </div>
+        <div class="trust-item fade-in">
+          <h4>No Progressive Drift</h4>
+          <p>This AI model was specifically built to hold conservative theological positions under pressure — because nobody builds technology for Christians. We did. It was stress-tested on sexuality, identity, grief, and suffering — the topics where most AI tools collapse into cultural accommodation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">From the Field</p>
+        <h2 class="section-heading">What leaders are saying.</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <blockquote>"I'm sharing the Refuge app with all my pastor friends. Have taken time this morning to work around in it. Amazing tool and resource. Thank you for your work on&nbsp;this."</blockquote>
+          <cite>— Senior Pastor, Kansas City</cite>
+        </div>
+        <div class="testimonial-card fade-in">
+          <blockquote>"We live in a very hard area of need, beyond what I can adequately put in this message. The conversation with Refuge, the connection to the Scriptures&hellip; the thoughtful prompts and questions it was placing before me went far beyond my hope and expectations."</blockquote>
+          <cite>— Children & Women's Director, San Diego</cite>
+        </div>
+        <div class="testimonial-card fade-in">
+          <blockquote>"I tested it with the hardest question I could think of — something about same-sex attraction from a teenager's perspective. It didn't flinch. It didn't condemn. It held the line theologically while treating the person with genuine dignity. I've never seen AI do&nbsp;that."</blockquote>
+          <cite>— Associate Pastor, Missouri</cite>
+        </div>
+        <div class="testimonial-card fade-in">
+          <blockquote>"My wife started using it after a miscarriage. She said it was the first time anything — person or app — didn't tell her 'everything happens for a reason.' That matters more than I can express."</blockquote>
+          <cite>— Worship Pastor, Colorado</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Church Pricing</p>
+        <h2 class="section-heading">Transparent pricing. No sales calls. No contracts.</h2>
+        <p class="section-body" style="margin: 0 auto;">
+          Every plan includes unlimited conversations, full access to all guided journeys, and the complete Refuge experience. Share with your congregation or use it yourself.
+        </p>
+      </div>
+      <div class="pricing-grid">
+
+        <!-- CARD 1: FOR YOUR CHURCH -->
+        <div class="price-card">
+          <div class="price-for gold">For Your Church</div>
+          <div class="price-name">Individual</div>
+          <div class="price-amount-row">
+            <div class="price-amount">$99<span style="font-size:16px;color:var(--text-dim);font-weight:400">/yr</span></div>
+            <div class="price-was">$149/yr</div>
+            <div class="price-save gold">Save 34%</div>
+          </div>
+          <div class="price-desc">
+            A professional resource you make available to your congregation. They process in private. You stay in the pastoral lane.
+          </div>
+          <ul class="price-features">
+            <li>Unlimited conversations</li>
+            <li>28 Guided Journeys</li>
+            <li>Full Soul Profile (conversation memory)</li>
+            <li>Journal & PDF sharing</li>
+            <li>Available 24/7</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQ4gzeoJ52L2102jp4gg0j" class="btn-primary">Try Refuge Free</a>
+          <div class="price-note">3-day free trial · Cancel anytime</div>
+        </div>
+
+        <!-- CARD 2: FOR YOU -->
+        <div class="price-card price-green">
+          <div class="price-for green">For You</div>
+          <div class="price-name">Professional Portal</div>
+          <div class="price-amount-row">
+            <div class="price-amount">$199<span style="font-size:16px;color:var(--text-dim);font-weight:400">/yr</span></div>
+            <div class="price-was">$349/yr</div>
+            <div class="price-save green">Save 43%</div>
+          </div>
+          <div class="price-desc">
+            Everything in Individual, plus a separate workspace that functions like a master clinician on call. Build discipleship curricula. Process a crisis before Sunday. Think through a difficult person. Prepare for a hard conversation. Debrief after a devastating one.
+          </div>
+          <ul class="price-features">
+            <li>Everything in Individual</li>
+            <li>Full Professional Portal access</li>
+            <li>Case consultation & session prep</li>
+            <li>Sermon & teaching reflection</li>
+            <li>Pastoral burnout & ministry support</li>
+            <li>Confidential processing for the shepherd</li>
+          </ul>
+          <a href="https://buy.stripe.com/9B69ATdkFcvdfRQ8HN4gg0i" class="btn-green">Get the Professional Portal</a>
+          <div class="price-note">Nobody builds technology for ministry leaders. We did.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">Honest Answers</p>
+        <h2 class="section-heading">Questions pastors actually ask.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3 class="faq-q">Is this just ChatGPT with Bible verses?</h3>
+          <p class="faq-a">No. Refuge runs on a custom system prompt with 13 specialized modules — marriage, grief, addiction, apologetics, pastoral burnout, sexuality and identity, parenting, and more. Each module is built on specific clinical and theological frameworks. The AI model was chosen specifically because it holds conservative theological positions under conversational pressure. Generic AI tools collapse on hard topics. Refuge was engineered not to.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What theological tradition does Refuge follow?</h3>
+          <p class="faq-a">Historic, orthodox Christianity. Refuge is grounded in Scripture and shaped by the thinkers pastors already trust — C.S. Lewis on suffering and the human condition, Dietrich Bonhoeffer on costly grace and community, Francis Schaeffer on truth and cultural engagement, and the theological anthropology of Reinhold Niebuhr on pride, brokenness, and the self before God. It does not adopt progressive, revisionist, or culturally accommodating positions on Scripture, sexuality, or identity.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What happens if someone is in crisis?</h3>
+          <p class="faq-a">Refuge has professional-grade safety protocols. If a conversation indicates imminent danger or self-harm, it provides appropriate crisis resources and guidance. It never attempts to handle what belongs in an emergency room, with law enforcement, or in a licensed therapist's office. It knows its limits — which is more than most people's late-night Google searches can say.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Can I see what my members are talking about?</h3>
+          <p class="faq-a">No. And you shouldn't be able to. Conversations are fully encrypted and private by design. This is intentional — people won't be honest if they think their pastor might see what they typed. The privacy is what makes it work. When they're ready to talk to you, they'll come with more clarity because they've already done the initial processing.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does this replace me?</h3>
+          <p class="faq-a">It shields you. Refuge handles the 2 AM triage so you don't have to. You get the "second session" version of your people — the ones who've already named what they're feeling and are ready to be shepherded, not the ones in raw crisis who need four hours of your evening. You become more effective, not less necessary.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How do I introduce this to my congregation?</h3>
+          <p class="faq-a">Start by using it yourself. Spend a week with it. Bring a real question — something you're actually carrying. Once you've experienced it, you'll know how to talk about it. Then mention it from the platform the way you'd recommend a trusted counselor: "I've found something I think could help some of you with what you're carrying between Sundays."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER Q&A -->
+  <section class="founder-qa">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">A Final Note From Dr. Thompson</p>
+        <h2 class="section-heading">The questions every pastor asks.</h2>
+      </div>
+      <div class="qa-grid">
+        <div class="qa-item fade-in">
+          <div class="qa-q">Is it theologically sound?</div>
+          <div class="qa-a">Yes — historic, orthodox, and anchored in Scripture. It isn't a replacement for the Gospel; it's a clinical framework for the pain that keeps people from hearing it.</div>
+        </div>
+        <div class="qa-item fade-in">
+          <div class="qa-q">Does it replace me?</div>
+          <div class="qa-a">No, it shields you. It handles the 2 AM triage so you don't have to. You get the "second session" version of your people — the ones ready to be shepherded, not the ones in raw crisis.</div>
+        </div>
+        <div class="qa-item fade-in">
+          <div class="qa-q">Is it safe?</div>
+          <div class="qa-a">It has professional-grade safety protocols that trigger appropriate crisis intervention. Refuge knows its lane — and it never attempts to handle what belongs in an emergency room or a licensed therapist's office.</div>
+        </div>
+        <div class="qa-item fade-in">
+          <div class="qa-q">Is it private?</div>
+          <div class="qa-a">Absolutely. Conversations are encrypted by design. When someone deletes a conversation or their account, it is wiped from servers and backups. Gone. Period.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER NOTE -->
+  <section class="founder">
+    <div class="container">
+      <div class="text-center">
+        <p class="section-label">A Note From the Founder</p>
+        <h2 class="section-heading">Why I built this.</h2>
+      </div>
+      <div class="founder-content">
+        <p>I've been a licensed counselor for 23 years. I've sat across from thousands of people in the worst moments of their lives — affairs discovered, children lost, faith unraveling, marriages ending.</p>
+        <p>The hardest part of my work has never been the clinical complexity. It's the math. There are too many people who need help and not enough hours in any counselor's week to reach them. The waitlists are months long. The cost is prohibitive. The stigma is real.</p>
+        <p>Pastors feel this acutely because they're the first call for people who would never dial a therapist. And they carry that weight with almost no support of their own.</p>
+        <p>I built Refuge because I believe the gap between "I need to talk to someone" and "I have an appointment in six weeks" is where people make their worst decisions. Refuge lives in that gap. It's not a replacement for you or for me. It's a first step — available at 2 AM, on Christmas Eve, in the parking lot after the argument — that gives people handles for their pain before they ever need our offices.</p>
+        <p>I staked my clinical reputation on this. It carries my name, my credentials, and my theology. If it doesn't hold up under the hardest questions your people will ask, I want to know about it.</p>
+        <div class="founder-sig">
+          <div class="founder-name">Dr. Jon Thompson, LPC-S</div>
+          <div class="founder-title">
+            Founder, Refuge · Genesis Counseling · Peace Partnership<br>
+            Doctorate, Midwestern Baptist Theological Seminary · B.A., Calvary University<br>
+            Lee's Summit, Missouri
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="section-divider"></div>
+      <h2>You were never meant to be<br>the only option.</h2>
+      <p>Try Refuge yourself. If it holds up, share it with your people.</p>
+      <div class="hero-cta-row" style="justify-content: center;">
+        <a href="https://app.refugeapp.ai" class="btn-primary">Reclaim Your Calling</a>
+        <a href="mailto:support@refugeapp.ai?subject=Church%20Pricing%20Inquiry" class="btn-secondary">Ask About Church Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="verse">"God is our refuge and strength, a very present help in trouble." — Psalm 46:1</p>
+      <p>© 2026 Refuge Technologies LLC · All Rights Reserved.</p>
+      <p class="disclaimer">Refuge is a tool for Christian-guided spiritual reflection and biblical dialogue. It is not a substitute for discipleship, professional counseling, therapy, or medical treatment.</p>
+    </div>
+  </footer>
+
+  <!-- SCROLL ANIMATIONS -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
