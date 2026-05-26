@@ -456,6 +456,36 @@
       font-size: 12px; color: var(--text-dim);
       margin-top: 10px; text-align: center;
     }
+    .btn-copy {
+      display: block; width: 100%;
+      margin-top: 12px;
+      padding: 12px 20px;
+      background: transparent;
+      border: 1px solid rgba(200, 164, 94, 0.3);
+      border-radius: 6px;
+      color: var(--gold-dim);
+      font-family: var(--sans);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .btn-copy:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(200, 164, 94, 0.06);
+    }
+    .btn-copy-green {
+      border-color: rgba(91, 140, 106, 0.3);
+      color: #6aab7e;
+    }
+    .btn-copy-green:hover {
+      border-color: #6aab7e;
+      color: #6aab7e;
+      background: rgba(91, 140, 106, 0.08);
+    }
     @media (max-width: 768px) {
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
     }
@@ -917,8 +947,9 @@
             <li>Journal & PDF sharing</li>
             <li>Available 24/7</li>
           </ul>
-          <a href="https://buy.stripe.com/5kQ4gzeoJ52L2102jp4gg0j" class="btn-primary">Try Refuge Free</a>
+          <a href="https://buy.stripe.com/5kQ4gzeoJ52L2102jp4gg0j" class="btn-primary">Subscribe Now</a>
           <div class="price-note">3-day free trial · Cancel anytime</div>
+          <button onclick="navigator.clipboard.writeText('https://www.refugeapp.ai/churches').then(() => { this.textContent = '✓ Copied!'; setTimeout(() => { this.innerHTML = '&#10697; Copy Link to Share'; }, 2000); })" class="btn-copy">&#10697; Copy Link to Share</button>
         </div>
 
         <!-- CARD 2: FOR YOU -->
@@ -943,6 +974,7 @@
           </ul>
           <a href="https://buy.stripe.com/9B69ATdkFcvdfRQ8HN4gg0i" class="btn-green">Get the Professional Portal</a>
           <div class="price-note">Nobody builds technology for ministry leaders. We did.</div>
+          <button onclick="navigator.clipboard.writeText('https://www.refugeapp.ai/shepherds').then(() => { this.textContent = '✓ Copied!'; setTimeout(() => { this.innerHTML = '&#10697; Copy Link to Share'; }, 2000); })" class="btn-copy btn-copy-green">&#10697; Copy Link to Share</button>
         </div>
 
       </div>
