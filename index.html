@@ -377,6 +377,14 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
+.web-note{max-width:600px;margin:52px auto 0;text-align:center;
+  background:#080f1a;color:var(--cream);
+  border:1px solid rgba(212,168,67,0.28);border-radius:16px;
+  padding:26px 34px;font-size:15.5px;line-height:1.65;
+  box-shadow:0 14px 38px rgba(0,0,0,0.30);
+  transition:opacity .5s ease,transform .45s ease,box-shadow .45s ease}
+.web-note:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(0,0,0,0.45)}
+@media(max-width:768px){.web-note{padding:22px 24px;font-size:14.5px;margin-top:40px}}
 
 @media(max-width:768px){
   .hero{align-items:flex-end}
@@ -633,7 +641,7 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
     <div class="pc-note">Nobody builds technology for ministry leaders. We did.</div>
   </div>
 </div>
-<p class="ss warm rv" style="max-width:600px;margin:52px auto 0;text-align:center;font-size:15px;line-height:1.6">Membership is handled here on the web. To use Refuge on your phone, download the app and sign in with the same email you signed up with.</p>
+<p class="web-note rv">Church pricing is only available here on the web. Sign up on this page, then download the Refuge app from the App Store and sign in with the same email to start using it.</p>
 </div>
 </section>
 
