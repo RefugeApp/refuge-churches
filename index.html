@@ -69,7 +69,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .hero h1{font-family:var(--heading);font-size:clamp(42px,7vw,82px);font-weight:500;font-style:italic;
   color:var(--cream);line-height:1.1;margin-bottom:28px;max-width:700px;
   opacity:0;animation:fadeUp .8s ease forwards .4s}
-.hero-sub{font-size:20px;color:var(--cream2);max-width:520px;line-height:1.7;margin-bottom:44px;
+.hero-sub{font-size:20px;color:var(--cream);max-width:520px;line-height:1.7;margin-top:22px;margin-bottom:44px;
   opacity:0;animation:fadeUp .8s ease forwards .6s}
 .hero-sub strong{color:#fff;font-weight:500}
 .cta-row{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s ease forwards .8s}
@@ -352,8 +352,12 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
 @media(max-width:768px){
   .hero .container{padding-top:120px;padding-bottom:80px}
   .hero h1{font-size:clamp(36px,8vw,52px)}
-  .cta-row{flex-direction:column;align-items:stretch}
-  .btn-glow,.btn-soft{text-align:center}
+  .cta-row{flex-direction:row;align-items:center;flex-wrap:nowrap;gap:10px}
+  .btn-glow{padding:14px 24px;flex:0 0 auto;text-align:center}
+  .hero-appstore{flex:0 0 auto;padding:8px 16px;gap:7px}
+  .hero-appstore svg{width:18px;height:18px}
+  .hero-appstore .as-sm{font-size:.5rem}
+  .hero-appstore .as-lg{font-size:.8rem}
 }
 </style>
 </head>
@@ -369,12 +373,11 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
   <h1>"I didn't sign up<br>for all this."</h1>
   <p class="hero-sub">A <strong>24/7 Christian guidance app</strong> built by a licensed counselor — a trustworthy first step for the people in your church who aren't ready to talk to anyone yet.</p>
   <div class="cta-row">
-    <a href="https://app.refugeapp.ai" target="_blank" rel="noopener" class="btn-glow">Try It Yourself — Free</a>
+    <a href="https://app.refugeapp.ai" target="_blank" rel="noopener" class="btn-glow">Try It Free</a>
     <a class="hero-appstore" href="https://apps.apple.com/us/app/refuge-soul-companion/id6760268197" target="_blank" rel="noopener">
       <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-62.1 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       <span class="as-text"><span class="as-sm">Download on the</span><span class="as-lg">App Store</span></span>
     </a>
-    <a href="#showcase" class="btn-soft">See It In Action</a>
   </div>
   <div class="hero-cred">Built by <strong>Dr. Jon Thompson, LPC-S</strong> · 23 years clinical experience<br>Doctorate, <strong>Midwestern Baptist Theological Seminary</strong></div>
 </div>
