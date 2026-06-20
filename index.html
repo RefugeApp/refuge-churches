@@ -63,8 +63,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
 .hero-bg::before{display:none}
 .hero .container{position:relative;z-index:3;padding-top:140px;padding-bottom:80px}
 .hero-tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
-  color:var(--gold2);padding:10px 22px;border-radius:100px;
-  background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.15);
+  color:#efd58c;padding:10px 22px;border-radius:100px;
+  background:rgba(212,168,67,0.14);border:1px solid rgba(212,168,67,0.45);
+  backdrop-filter:blur(6px);text-shadow:0 1px 8px rgba(6,9,15,0.55);
   margin-bottom:36px;opacity:0;animation:fadeUp .8s ease forwards .2s}
 .hero h1{font-family:var(--heading);font-size:clamp(42px,7vw,82px);font-weight:500;font-style:italic;
   color:var(--cream);line-height:1.1;margin-bottom:28px;max-width:700px;
@@ -350,8 +351,14 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
 .rv.vis{opacity:1;transform:translateY(0)}
 
 @media(max-width:768px){
-  .hero .container{padding-top:120px;padding-bottom:80px}
-  .hero h1{font-size:clamp(36px,8vw,52px)}
+  .hero{align-items:flex-end}
+  .hero-bg{background-position:15% 30%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(6,9,15,0) 0%,rgba(6,9,15,0.12) 42%,rgba(6,9,15,0.72) 74%,rgba(6,9,15,0.93) 100%)}
+  .hero .container{padding-top:80px;padding-bottom:52px}
+  .hero-tag{margin-bottom:22px}
+  .hero h1{font-size:clamp(34px,8.5vw,52px);text-align:left;margin-left:0;margin-bottom:22px}
+  .hero-sub{margin-top:16px;margin-bottom:30px}
+  .hero-cred{margin-top:30px}
   .cta-row{flex-direction:row;align-items:center;flex-wrap:nowrap;gap:10px}
   .btn-glow{padding:14px 24px;flex:0 0 auto;text-align:center}
   .hero-appstore{flex:0 0 auto;padding:8px 16px;gap:7px}
