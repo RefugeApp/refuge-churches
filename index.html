@@ -203,6 +203,32 @@ nav .container{display:flex;align-items:center;justify-content:space-between}
   color:#1a1208;line-height:1.55;margin-bottom:24px}
 .tw-card cite{font-style:normal;font-size:13px;color:#8a6e3a;letter-spacing:1px;font-weight:600}
 
+/* FEATURED TESTIMONIAL — slim cream band, clay box */
+.fq{background:var(--cream);padding:60px 0}
+.fq .container{max-width:1040px}
+.fq-box{position:relative;display:flex;align-items:center;gap:46px;
+  background:var(--warmbg);border-radius:22px;padding:44px 52px;overflow:hidden;
+  box-shadow:0 16px 44px rgba(42,32,24,0.12)}
+.fq-box::before{content:'\201C';position:absolute;top:4px;left:22px;
+  font-family:var(--heading);font-size:120px;line-height:1;
+  color:rgba(106,78,38,0.16);pointer-events:none}
+.fq-quote{flex:1 1 auto;margin:0;position:relative;z-index:1;
+  font-family:var(--heading);font-style:normal;font-weight:500;
+  font-size:clamp(20px,2.25vw,26px);line-height:1.42;color:var(--warmhead)}
+.fq-sig{flex:0 0 200px;border-left:1px solid rgba(106,78,38,0.32);padding-left:30px;
+  font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:1.6px;
+  text-transform:uppercase;color:#6b4e26;line-height:1.55}
+.fq-sig .fq-dash{display:block;margin-bottom:10px;font-size:22px;line-height:1;
+  color:#8a6e3a;font-weight:700}
+@media(max-width:768px){
+  .fq{padding:40px 0}
+  .fq-box{flex-direction:column;align-items:flex-start;gap:22px;padding:34px 28px}
+  .fq-box::before{font-size:96px;top:0;left:14px}
+  .fq-sig{flex:none;width:auto;border-left:none;padding-left:0;
+    border-top:1px solid rgba(106,78,38,0.32);padding-top:18px}
+  .fq-sig .fq-dash{display:inline;margin:0 6px 0 0;font-size:15px}
+}
+
 /* FAQ — DARK */
 .faq{padding:120px 0;background:#0d1a2d}
 .faq-head{text-align:center;margin-bottom:56px}
@@ -390,6 +416,16 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
 </div>
 </section>
 
+<!-- FEATURED TESTIMONIAL -->
+<section class="fq">
+<div class="container">
+  <figure class="fq-box rv">
+    <blockquote class="fq-quote">"I'm sharing the Refuge app with all my pastor friends… Amazing tool and resource. Thank you for your work on this."</blockquote>
+    <figcaption class="fq-sig"><span class="fq-dash">—</span>Senior Pastor,<br>Kansas City</figcaption>
+  </figure>
+</div>
+</section>
+
 <!-- PROBLEM — WARM -->
 <section class="problem warm-section">
 <div class="container">
@@ -485,7 +521,6 @@ footer{padding:48px 0;border-top:1px solid rgba(255,255,255,0.04);
   <h2 class="sh warm">Don't take our word for it.</h2>
 </div>
 <div class="t-grid">
-  <div class="tw-card rv"><blockquote>"I'm sharing the Refuge app with all my pastor friends. Have taken time this morning to work around in it. Amazing tool and resource. Thank you for your work on&nbsp;this."</blockquote><cite>— Senior Pastor, Kansas City</cite></div>
   <div class="tw-card rv"><blockquote>"We live in a very hard area of need, beyond what I can adequately put in this message. The conversation with Refuge, the connection to the Scriptures… the thoughtful prompts and questions went far beyond my hope and expectations."</blockquote><cite>— Children &amp; Women's Director, San Diego</cite></div>
   <div class="tw-card rv"><blockquote>"I tested it with the hardest question I could think of — something about same-sex attraction from a teenager's perspective. It didn't flinch. It didn't condemn. It held the line theologically while treating the person with genuine dignity. I've never seen AI do&nbsp;that."</blockquote><cite>— Associate Pastor, Missouri</cite></div>
   <div class="tw-card rv"><blockquote>"My wife started using it after a miscarriage. She said it was the first time anything — person or app — didn't tell her 'everything happens for a reason.' That matters more than I can express."</blockquote><cite>— Worship Pastor, Colorado</cite></div>
